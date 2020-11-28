@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  service-name:
+    image: bot
+    container_name: bot
+    build:
+      context: .
+    restart: on-failure
+    env_file:
+      - bot/data/.env
+  

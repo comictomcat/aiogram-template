@@ -1,0 +1,18 @@
+# Cache files
+__pycache__/
+
+# Project files
+*.log
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Editor-specified files
+.vscode/
+.idea/
