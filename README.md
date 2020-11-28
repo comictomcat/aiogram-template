@@ -1,3 +1,5 @@
+### [![Python](https://img.shields.io/badge/Python-3.7%2B-blue)](https://www.python.org/downloads/)  [![Aiogram](https://img.shields.io/badge/aiogram-2.11.2-blue)](https://pypi.org/project/aiogram/) ![Docker](https://img.shields.io/badge/Docker-Yes-success) 
+
 ## About
 Scalable and straightforward template for bots written on aiogram with built-in handlers, filters, utils, middlewares and keyboards. 
 
