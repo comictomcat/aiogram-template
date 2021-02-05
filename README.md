@@ -1,4 +1,4 @@
-### [![Python](https://img.shields.io/badge/Python-3.7%2B-blue)](https://www.python.org/downloads/)  [![Aiogram](https://img.shields.io/badge/aiogram-2.11.2-blue)](https://pypi.org/project/aiogram/) ![Docker](https://img.shields.io/badge/Docker-Yes-success) 
+### [![Python](https://img.shields.io/badge/Python-3.7%2B-blue)](https://www.python.org/downloads/)  [![Aiogram](https://img.shields.io/badge/aiogram-2.11.2-blue)](https://pypi.org/project/aiogram/) 
 
 ### About
 Scalable and straightforward template for bots written on [aiogram](https://github.com/aiogram/aiogram) with built-in handlers, utils, middleware, filter and a few extras. Inspired by a couple of other templates mentioned later.
@@ -14,7 +14,7 @@ Scalable and straightforward template for bots written on [aiogram](https://gith
 - Install dependencies `pip install -r requirements.txt`;
 - Start the bot `python3 -m app`. (or just `python`)
 
-### Project Structure
+#### Project Structure
  - Application package is in `app`;
  - Config and .env file are located in `app/config.py` and `bot/data/.env` respectively;
  - Entry-point is `app/__main__.py` (can be executed as `python3 -m app`).
