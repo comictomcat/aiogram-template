@@ -1,9 +1,9 @@
 from loguru import logger
 
-from bot.misc import dp
+from app import dp
 from .throttling import ThrottlingMiddleware, rate_limit
 
 
-if __name__ == "bot.middlewares":
+if __name__ == "app.middlewares":
     logger.info("Configuring middlewares")
     dp.middleware.setup(ThrottlingMiddleware())

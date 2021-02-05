@@ -1,12 +1,19 @@
 from loguru import logger
 
 from aiogram.utils.exceptions import (
-    Unauthorized, InvalidQueryID, TelegramAPIError, CantDemoteChatCreator,
-    MessageNotModified, MessageToDeleteNotFound, MessageTextIsEmpty,
-    RetryAfter, CantParseEntities, MessageCantBeDeleted,
+    Unauthorized,
+    InvalidQueryID,
+    TelegramAPIError,
+    CantDemoteChatCreator,
+    MessageNotModified,
+    MessageToDeleteNotFound,
+    MessageTextIsEmpty,
+    RetryAfter,
+    CantParseEntities,
+    MessageCantBeDeleted,
 )
 
-from bot.misc import dp
+from app import dp
 
 
 @dp.errors_handler()
