@@ -23,12 +23,10 @@ async def start(m: Message):
 
     answer = (
         f"Hello there, {hbold(m.from_user.first_name)}! "
-        "I'm an open-source aiogram template bot with some extras. \n\n"
-        
+        "I'm an open-source aiogram template bot with some extras. \n\n"        
         f"{hbold('Main')} commands available here: \n"
         f" • /help: {commands['help']} \n"
         f" • /ping: {commands['ping']} \n\n"
-        
         f"{hbold('Note:')} You may specify a certain module with "
         f"/help in order to get docs about the command."
     )
