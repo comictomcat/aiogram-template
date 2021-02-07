@@ -9,4 +9,4 @@ storage = MemoryStorage()
 dp = Dispatcher(bot, storage=storage)
 
 # Template version
-__version__ = "0.0.1 (unstable)"
+__version__ = "0.2.0"

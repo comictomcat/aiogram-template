@@ -1,5 +1,4 @@
 from app.misc import read_secret
-from app.misc import CommandsManager
 
 # Read .secret file
 secret = read_secret()
@@ -14,7 +13,9 @@ SKIP_UPDATES = True
 PARSE_MODE = "HTML"
 
 # Commands
-commands = CommandsManager()
-commands.add("start", "Start conversation with me")
-commands.add("help", "List of available commands.", "[module]", visible=True)
-commands.add("ping", "See whether I'm alive or not", visible=True)
+commands = {
+    "start": "Start conversation with me",
+    "help": "List of available commands",
+    "ping": "See whether I'm alive or not"
+}
+

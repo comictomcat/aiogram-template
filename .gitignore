@@ -1,9 +1,6 @@
 # Cache files
 __pycache__/
 
-# Project files
-*.log
-
 # Environments
 .env
 .venv

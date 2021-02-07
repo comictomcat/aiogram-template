@@ -1,5 +1,7 @@
 from loguru import logger
+
 from aiogram import executor, Dispatcher
+from aiogram.types import BotCommand
 
 # noinspection PyUnresolvedReferences
 from app import dp, middlewares, filters, handlers
@@ -8,7 +10,12 @@ from app.config import SKIP_UPDATES, commands
 
 async def startup(dp: Dispatcher):
     """Triggers on startup."""
-    await commands.set(dp)
+
+    # Set command hints
+    await dp.bot.set_my_commands(
+        [BotCommand(command, description)
+         for command, description in commands.items()])
+
     logger.info("Bot has started")
 
 
