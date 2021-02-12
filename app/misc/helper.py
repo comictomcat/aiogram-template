@@ -1,4 +1,4 @@
-from pathlib import Path
+from aiogram.types import BotCommand
 
 
 def get_args(text: str, maximum: int = 2):
@@ -16,26 +16,7 @@ def get_args(text: str, maximum: int = 2):
     return text.split(maxsplit=maximum)[1:]
 
 
-def read_secret(path: str = ".secret"):
-    """Read a secret file."""
-
-    root = f"{Path(__file__).parent.parent.parent}/{path}"
-    values = {}
-    with open(root) as file:
-        for line in file:
-
-            # Ignore line, if it starts with hash symbol
-            if line.startswith("#"):
-                continue
-
-            # Parse the line
-            arguments = line.split()
-
-            # Check if the line meets syntax (key value)
-            if 2 < len(arguments) > 2:
-                continue
-
-            # Assign a value
-            values[arguments[0]] = arguments[1]
-
-    return values
+async def set_commands(dp, commands: dict):
+    await dp.bot.set_my_commands(
+        [BotCommand(command, description)
+         for command, description in commands.items()])

@@ -1,4 +1,4 @@
 from .errors import dp
-from .core import dp
+from .start import dp
 
 __all__ = ["dp"]

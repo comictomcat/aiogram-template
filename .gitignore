@@ -11,7 +11,8 @@ env.bak/
 venv.bak/
 
 # Secret file
-.secret
+config.yml
+config.yaml
 
 # Editor-specified files
 .vscode/

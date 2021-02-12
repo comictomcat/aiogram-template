@@ -1,31 +1,21 @@
 from loguru import logger
-
 from aiogram import executor, Dispatcher
-from aiogram.types import BotCommand
 
 # noinspection PyUnresolvedReferences
-from app import dp, middlewares, filters, handlers
-from app.config import SKIP_UPDATES, commands
+from app import dp, middlewares, filters, handlers, config
+from app.misc import set_commands
 
 
-async def startup(dp: Dispatcher):
+async def startup(dispatcher: Dispatcher):
     """Triggers on startup."""
-
-    # Set command hints
-    await dp.bot.set_my_commands(
-        [BotCommand(command, description)
-         for command, description in commands.items()])
-
     logger.info("Bot has started")
 
-
-async def shutdown(dp: Dispatcher):
-    """Triggers on shutdown."""
-    logger.info("Bot has stopped")
+    # Command hints
+    await set_commands(dispatcher, config.commands)
 
 
 if __name__ == "__main__":
-    """Start long-polling mode"""
+    # Start long-polling mode
     executor.start_polling(
-        dp, on_startup=startup, on_shutdown=shutdown, skip_updates=SKIP_UPDATES
+        dp, on_startup=startup, **config.executor
     )

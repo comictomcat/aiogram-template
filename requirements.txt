@@ -1,2 +1,0 @@
-aiogram==2.11.2
-loguru==0.5.3

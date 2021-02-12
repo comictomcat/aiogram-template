@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "Template"
+version = "0.3.0"
+description = "An aiogram template written in aiogram."
+authors = ["Daniil Fedotov <comictomcat@gmail.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+aiogram = "^2.11.2"
+loguru = "^0.5.3"
+PyYAML = "^5.4.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

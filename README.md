@@ -4,20 +4,28 @@
 Scalable and straightforward template for bots written on [aiogram](https://github.com/aiogram/aiogram) with built-in handlers, utils, middleware, filter and a few extras. Inspired by a couple of other templates mentioned later.
 
 ### Setting it up
+
+#### System dependencies
+- Python 3.7+
+- GNU/Make
+- GIT
+
 #### Preparations
 - Clone this repo via `git clone https://gitlab.com/comictomcat/aiogram-template.git`;
-- Move to the directory `cd aiogram-template`;
-- Specify your token `echo "token <token>" > .secret`. (Replace <token> with your own one.)
+- Move to the directory `cd aiogram-template`.
 
-#### Plain Deployment
-- _Optionally:_ create the [virtual environment](https://docs.python.org/3/tutorial/venv.html);
-- Install dependencies `pip install -r requirements.txt`;
-- Start the bot `python3 -m app`. (or just `python`)
+#### Poetry Deployment
+- **Note:** You need to have Poetry installed: `pip install poetry`;
+- Install dependencies: `make install`;
+- Generate a default config: `make config`;
+- Start the bot: `make run`.
 
-#### Project Structure
- - Application package is in `app`;
- - Config and .env file are located in `app/config.py` and `bot/data/.env` respectively;
- - Entry-point is `app/__main__.py` (can be executed as `python3 -m app`).
+#### Maintenance
+*Use `make help` to view available commands*
+
+- Update dependencies `make update`;
+
+
 
 ### Other templates
  - [aiogram-bot-template](https://github.com/Latand/aiogram-bot-template) by Latand
