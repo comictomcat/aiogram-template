@@ -2,6 +2,11 @@ from pathlib import Path
 
 import yaml
 
+try:
+    from yaml import CLoader as Loader, CDumper as Dumper
+except ImportError:
+    from yaml import Loader, Dumper
+
 
 class Config:
     """
@@ -16,7 +21,7 @@ class Config:
         """
 
         with open(path) as file:
-            self.config = yaml.load(stream=file, Loader=yaml.CLoader)
+            self.config = yaml.load(stream=file, Loader=Loader)
 
         self._set_shortcuts()
 
