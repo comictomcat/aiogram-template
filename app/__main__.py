@@ -3,11 +3,12 @@ from aiogram import executor, Dispatcher
 
 # noinspection PyUnresolvedReferences
 from app import dp, middlewares, filters, handlers, config
-from app.misc import set_commands
+from app.misc import set_commands, mailing
 
 
 async def startup(dispatcher: Dispatcher):
     """Triggers on startup."""
+    await mailing(dispatcher, config.superusers, "Bot has started")
     logger.info("Bot has started")
 
     # Command hints

@@ -20,3 +20,16 @@ async def set_commands(dp, commands: dict):
     await dp.bot.set_my_commands(
         [BotCommand(command, description)
          for command, description in commands.items()])
+
+
+async def mailing(dp, users: list, message: str):
+    
+    # Iterate through superusers and try to send an error message
+    for superuser in users:
+        if not superuser:
+            continue
+
+        try:
+            await dp.bot.send_message(superuser, message)
+        except:
+            continue
