@@ -27,7 +27,7 @@ def main():
         user = "null"
 
     # Note: it's NOT a config, it's used for generating configs
-    default_conf = """
+    default_conf = f"""
 app:
   bot:
     token: {token}
@@ -38,7 +38,13 @@ app:
 
   superusers:
     - {user}
-""".format(token=token, user=user)
+ 
+  modules:
+    - handlers.start
+    - handlers.errors
+    - middlewares.throttling
+    - filters.is_reply
+"""
 
     with open(config_path, "w") as file:
         file.write(default_conf)

@@ -4,7 +4,6 @@ from app import dp, config
 from app.misc import mailing
 
 
-@dp.errors_handler()
 async def errors_handler(update, exception):
     """Exceptions handler. Catches all
     exceptions within task factory tasks."""
@@ -13,3 +12,7 @@ async def errors_handler(update, exception):
 
     await mailing(dp, config.superusers, message)
     logger.exception(message)
+
+
+def setup(dispatcher):
+    dispatcher.register_errors_handler(errors_handler)

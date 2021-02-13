@@ -89,3 +89,7 @@ class ThrottlingMiddleware(BaseMiddleware):
         # If current message is not last with current key - do not send message
         if thr.exceeded_count == throttled.exceeded_count:
             await message.reply("Unlocked.")
+
+
+def setup(dp: Dispatcher):
+    dp.middleware.setup(ThrottlingMiddleware())
