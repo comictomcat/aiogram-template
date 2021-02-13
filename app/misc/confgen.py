@@ -21,7 +21,7 @@ def main():
             return False
 
     token = input(f"{prefix} Enter your token: ")
-    user = input(f"{prefix} Enter your id [None]: ")
+    user = input(f"{prefix} Enter your ID [None]: ")
     
     if not user.strip():
         user = "null"

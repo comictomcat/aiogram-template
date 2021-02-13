@@ -1,7 +1,4 @@
-from __future__ import annotations
-
 from pathlib import Path
-from typing import Union
 
 import yaml
 
@@ -11,7 +8,7 @@ class Config:
     YAML config parser
     """
 
-    def __init__(self, path: Union[Path, str]):
+    def __init__(self, path: str or Path):
         """
         A Config constructor
         :param path: path to config file
