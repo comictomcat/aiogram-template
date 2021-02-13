@@ -21,25 +21,24 @@ def main():
             return False
 
     token = input(f"{prefix} Enter your token: ")
+    user = input(f"{prefix} Enter your id [None]: ")
+    
+    if not user.strip():
+        user = "null"
 
     # Note: it's NOT a config, it's used for generating configs
     default_conf = """
 app:
   bot:
-    token: %TOKEN%
+    token: {token}
     parse_mode: html
 
   executor:
     skip_updates: true
 
   superusers:
-    - null
-
-  commands:
-    {
-      start: 'Start conversation with me'
-    }
-""".replace("%TOKEN%", token)
+    - {user}
+""".format(token=token, user=user)
 
     with open(config_path, "w") as file:
         file.write(default_conf)
