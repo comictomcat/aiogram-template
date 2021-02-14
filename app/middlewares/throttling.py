@@ -1,9 +1,10 @@
 import asyncio
 
-from aiogram import types, Dispatcher
+from aiogram import Dispatcher
 from aiogram.dispatcher import DEFAULT_RATE_LIMIT
 from aiogram.dispatcher.handler import CancelHandler, current_handler
 from aiogram.dispatcher.middlewares import BaseMiddleware
+from aiogram.types import Message
 from aiogram.utils.exceptions import Throttled
 
 
@@ -27,7 +28,7 @@ class ThrottlingMiddleware(BaseMiddleware):
         self.prefix = key_prefix
         super(ThrottlingMiddleware, self).__init__()
 
-    async def on_process_message(self, message: types.Message, data: dict):
+    async def on_process_message(self, message: Message, data: dict):
         """
         This handler is called when dispatcher receives a message
         :param data:
@@ -58,9 +59,10 @@ class ThrottlingMiddleware(BaseMiddleware):
             # Cancel current handler
             raise CancelHandler()
 
-    async def message_throttled(self, message: types.Message, throttled: Throttled):
+    async def message_throttled(self, message: Message, throttled: Throttled):
         """
-        Notify user only on first exceed and notify about unlocking only on last exceed
+        Notify user only on first exceed and notify
+        about unlocking only on last exceed
         :param message:
         :param throttled:
         """

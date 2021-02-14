@@ -1,9 +1,9 @@
 import logging.config
 from pathlib import Path
 
-from rich.logging import RichHandler
 from aiogram import Bot, Dispatcher
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
+from rich.logging import RichHandler
 
 from app.misc import Config, ModuleManager
 

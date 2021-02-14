@@ -45,5 +45,5 @@ async def mailing(dp, users: list, message: str):
 
         try:
             await dp.bot.send_message(superuser, message)
-        except:
+        except Exception:
             continue

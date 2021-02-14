@@ -1,5 +1,5 @@
-from aiogram import filters, Dispatcher
-from aiogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
+from aiogram import Dispatcher, filters
+from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from aiogram.utils.markdown import hbold
 
 from app.middlewares.throttling import rate_limit

@@ -3,9 +3,9 @@ from pathlib import Path
 from yaml import load
 
 try:
-    from yaml import CLoader as Loader, CDumper as Dumper
+    from yaml import CLoader as Loader
 except ImportError:
-    from yaml import Loader, Dumper
+    from yaml import Loader
 
 
 class Config:
@@ -28,7 +28,8 @@ class Config:
     def _set_shortcuts(self):
         """
         A private method that sets shortcut for elements in `app`
-        it's created to be able use config.bot instead of config.app.get('bot') and others
+        it's created to be able use config.bot
+        instead of config.app.get('bot') and others
         """
         for key, value in self.app.items():
             setattr(self, key, value)

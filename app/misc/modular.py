@@ -31,7 +31,10 @@ class ModuleManager:
             module_name = imp_module.__name__
 
             if not hasattr(imp_module, "setup"):
-                logging.error(f"Module <{module_name}> doesn't seem to have <setup>.")
+                logging.error(
+                    f"Module <{module_name}> doesn't " f"seem to have <setup>."
+                )
+
                 return
 
             if not callable(imp_module.setup):

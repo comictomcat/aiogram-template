@@ -2,7 +2,7 @@ import logging
 
 from aiogram import Dispatcher
 
-from app.bot import dp, config
+from app.bot import config, dp
 from app.misc import mailing
 
 

@@ -7,7 +7,7 @@ def main():
     Generate a config.
     """
 
-    prefix = f"\033[32m•\033[0m"
+    prefix = "\033[32m•\033[0m"
     project_path = Path(__file__).parent.parent.parent
     config_path = f"{project_path}/config.yml"
 
@@ -16,7 +16,9 @@ def main():
     if isfile(config_path):
 
         answer = (
-            input(f"{prefix} Config file is going to be overwritten. Proceed? [Y/n] ")
+            input(
+                f"{prefix} Config file is going to be " f"overwritten. Proceed? [Y/n] "
+            )
             .strip()
             .lower()
         )
@@ -42,7 +44,7 @@ app:
 
   superusers:
     - {user}
- 
+
   modules:
     - handlers.start
     - handlers.errors

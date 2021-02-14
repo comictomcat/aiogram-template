@@ -1,8 +1,8 @@
 import logging
 
-from aiogram import executor, Dispatcher
+from aiogram import Dispatcher, executor
 
-from app.bot import dp, config, modules
+from app.bot import config, dp, modules
 
 
 async def startup(dispatcher: Dispatcher):
@@ -10,7 +10,7 @@ async def startup(dispatcher: Dispatcher):
 
     # Load modules
     modules.load()
-    logging.debug(f"Modules: " + ", ".join(modules.loaded))
+    logging.debug("Modules: " + ", ".join(modules.loaded))
     logging.info("Start polling.")
 
 

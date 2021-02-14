@@ -9,7 +9,11 @@ help:
 	@echo "  install	Install dependencies"
 	@echo "  run		Start a bot"
 	@echo "  update	Update dependencies"
+	@echo "  flake		Run flake8"
+	@echo "  black		Run black"
+	@echo "  isort		Run isort"
 	@echo "  lint		Reformat code"
+
 
 # ========
 # Commands
@@ -27,5 +31,17 @@ run:
 update:
 	python -m poetry update
 
-lint:
+
+black:
 	python -m poetry run python -m black .
+
+isort:
+	python -m poetry run python -m isort .
+
+flake:
+	python -m poetry run python -m flake8 .
+
+lint:
+	$(MAKE) black
+	$(MAKE) isort
+	$(MAKE) flake
