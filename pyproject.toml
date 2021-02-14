@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "Template"
-version = "0.5.2"
+version = "0.5.3"
 description = "An aiogram template written in aiogram."
 authors = ["Daniil Fedotov <comictomcat@gmail.com>"]
 license = "MIT"
@@ -10,6 +10,8 @@ python = "^3.8"
 aiogram = "^2.11.2"
 PyYAML = "^5.4.1"
 rich = "^9.10.0"
+
+[tool.poetry.dev-dependencies]
 black = "^20.8b1"
 isort = "^5.7.0"
 flake8 = "^3.8.4"
