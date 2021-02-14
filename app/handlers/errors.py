@@ -1,17 +1,21 @@
-from loguru import logger
+import logging
 
 from app import dp, config
 from app.misc import mailing
 
 
 async def errors_handler(update, exception):
-    """Exceptions handler. Catches all
-    exceptions within task factory tasks."""
-    
-    message = f"Error:\n{exception}\n\nUpdate: {update}"
+    """
+    Exceptions handler. Catches all
+    exceptions within task factory tasks.
+    """
 
-    await mailing(dp, config.superusers, message)
-    logger.exception(message)
+    await mailing(
+        dp, config.superusers, f"Error: \n{exception} \n\n" f"Update: {update}"
+    )
+
+    logging.exception(exception)
+    logging.debug(update)
 
 
 def setup(dispatcher):

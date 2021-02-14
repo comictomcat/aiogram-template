@@ -24,6 +24,7 @@ Scalable and straightforward template for bots written on [aiogram](https://gith
 *Use `make help` to view available commands*
 
 - Update dependencies `make update`;
+- Reformat code `make reformat`.
 
 
 

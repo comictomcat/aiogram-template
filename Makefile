@@ -2,27 +2,30 @@ default:help
 
 help:
 	@echo "USAGE"
-	@echo "   make <command>"
+	@echo "  make <commands>"
 	@echo ""
 	@echo "AVAILABLE COMMANDS"
 	@echo "  config	Generate a default config"
 	@echo "  install	Install dependencies"
 	@echo "  run		Start a bot"
 	@echo "  update	Update dependencies"
-	@echo "  version	View version of packages"
+	@echo "  reformat	Reformat code"
 
 # ========
 # Commands
 # ========
 
 config:
-	poetry run python app/misc/confgen.py
+	python -m poetry run python app/misc/confgen.py
 
 install:
-	poetry install
+	python -m poetry install
 
 run:
-	poetry run python -m app
+	python -m poetry run python -m app
 
 update:
-	poetry update
+	python -m poetry update
+
+reformat:
+	python -m poetry run python -m black .

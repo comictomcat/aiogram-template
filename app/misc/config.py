@@ -1,6 +1,6 @@
 from pathlib import Path
 
-import yaml
+from yaml import load
 
 try:
     from yaml import CLoader as Loader, CDumper as Dumper
@@ -21,7 +21,7 @@ class Config:
         """
 
         with open(path) as file:
-            self.config = yaml.load(stream=file, Loader=Loader)
+            self.config = load(stream=file, Loader=Loader)
 
         self._set_shortcuts()
 
@@ -34,6 +34,9 @@ class Config:
             setattr(self, key, value)
 
     def __getattr__(self, key, default=None):
+        """
+        A shortcut for get method
+        """
         if default is None:
             default = dict()
 

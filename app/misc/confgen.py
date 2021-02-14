@@ -1,10 +1,12 @@
-"""Generates a config"""
-
 from os.path import isfile
 from pathlib import Path
 
 
 def main():
+    """
+    Generate a config.
+    """
+
     prefix = f"\033[32m•\033[0m"
     project_path = Path(__file__).parent.parent.parent
     config_path = f"{project_path}/config.yml"
@@ -13,16 +15,18 @@ def main():
 
     if isfile(config_path):
 
-        answer = input(
-            f"{prefix} Config file is going to be overwritten. Proceed? [Y/n] "
-        ).strip().lower()
+        answer = (
+            input(f"{prefix} Config file is going to be overwritten. Proceed? [Y/n] ")
+            .strip()
+            .lower()
+        )
 
         if answer not in {"y", "yes", "yep", "sure", ""}:
             return False
 
     token = input(f"{prefix} Enter your token: ")
     user = input(f"{prefix} Enter your ID [None]: ")
-    
+
     if not user.strip():
         user = "null"
 
@@ -44,6 +48,11 @@ app:
     - handlers.errors
     - middlewares.throttling
     - filters.is_reply
+
+  log_ignore:
+    - aiogram
+    - aiogram.Middleware
+    - aiogram.dispatcher.dispatcher
 """
 
     with open(config_path, "w") as file:

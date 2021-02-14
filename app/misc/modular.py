@@ -1,6 +1,6 @@
+import logging
 from importlib import import_module
 
-from loguru import logger
 from aiogram import Dispatcher
 
 
@@ -10,22 +10,33 @@ class ModuleManager:
     """
 
     def __init__(self, dp: Dispatcher, modules):
+        """
+        A Config constructor
+        :param dp: Dispatcher
+        :type modules: Iterable
+        """
         self.dp = dp
         self.modules = modules
+        self.loaded = []
 
     def load(self):
-        loaded = list()
-        for module in self.modules:
-            imported = import_module("app." + module)
+        """
+        This method goes through modules and imports them.
+        If module has <setup> attribute and it's callable,
+        it executes it.
+        """
 
-            if hasattr(imported, "setup"):
-                if callable(imported.setup):
-                    imported.setup(self.dp)
-                    loaded.append(imported.__name__)
-                else:
-                    logger.error(f"Setup attribute is NOT callable in module <{imported.__name__}>")
-            else:
-                logger.error(f"Module <{imported.__name__}> was not loaded due to lack of "
-                             f"setup attribute.")
-        
-        return loaded
+        for module in self.modules:
+            imp_module = import_module("app." + module)
+            module_name = imp_module.__name__
+
+            if not hasattr(imp_module, "setup"):
+                logging.error(f"Module <{module_name}> doesn't seem to have <setup>.")
+                return
+
+            if not callable(imp_module.setup):
+                logging.error(f"<setup> is not callable in <{module_name}>")
+                return
+
+            imp_module.setup(self.dp)
+            self.loaded.append(module_name)
