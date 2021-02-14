@@ -1,6 +1,8 @@
 import logging
 
-from app import dp, config
+from aiogram import Dispatcher
+
+from app.bot import dp, config
 from app.misc import mailing
 
 
@@ -18,5 +20,5 @@ async def errors_handler(update, exception):
     logging.debug(update)
 
 
-def setup(dispatcher):
-    dispatcher.register_errors_handler(errors_handler)
+def setup(dp: Dispatcher):
+    dp.register_errors_handler(errors_handler)

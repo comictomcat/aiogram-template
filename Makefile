@@ -9,7 +9,7 @@ help:
 	@echo "  install	Install dependencies"
 	@echo "  run		Start a bot"
 	@echo "  update	Update dependencies"
-	@echo "  reformat	Reformat code"
+	@echo "  lint		Reformat code"
 
 # ========
 # Commands
@@ -27,5 +27,5 @@ run:
 update:
 	python -m poetry update
 
-reformat:
+lint:
 	python -m poetry run python -m black .

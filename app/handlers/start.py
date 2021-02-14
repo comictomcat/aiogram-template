@@ -1,8 +1,8 @@
-from aiogram import filters
+from aiogram import filters, Dispatcher
 from aiogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 from aiogram.utils.markdown import hbold
 
-from app.middlewares import rate_limit
+from app.middlewares.throttling import rate_limit
 
 
 @rate_limit(3, "start")
@@ -22,5 +22,5 @@ async def start(m: Message):
     )
 
 
-def setup(dispatcher):
-    dispatcher.register_message_handler(start, filters.Command(commands="start"))
+def setup(dp: Dispatcher):
+    dp.register_message_handler(start, filters.Command(commands="start"))

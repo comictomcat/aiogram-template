@@ -2,7 +2,7 @@ import logging
 
 from aiogram import executor, Dispatcher
 
-from app import dp, config, modules
+from app.bot import dp, config, modules
 
 
 async def startup(dispatcher: Dispatcher):

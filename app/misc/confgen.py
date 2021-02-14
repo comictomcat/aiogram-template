@@ -51,6 +51,7 @@ app:
 
   log_ignore:
     - aiogram
+    - asyncio
     - aiogram.Middleware
     - aiogram.dispatcher.dispatcher
 """

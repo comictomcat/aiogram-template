@@ -19,7 +19,7 @@ def rate_limit(limit: int, key=None):
 
 class ThrottlingMiddleware(BaseMiddleware):
     """
-    Simple middleware
+    Throttling middleware
     """
 
     def __init__(self, limit=DEFAULT_RATE_LIMIT, key_prefix="antiflood_"):
