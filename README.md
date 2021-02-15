@@ -11,7 +11,7 @@ Scalable and straightforward template for bots written on [aiogram](https://gith
 - GIT
 
 #### Preparations
-- Clone this repo via `git clone https://gitlab.com/comictomcat/aiogram-template.git`;
+- Clone this repo via `git clone https://github.com/comictomcat/aiogram-template.git`;
 - Move to the directory `cd aiogram-template`.
 
 #### Poetry Deployment
