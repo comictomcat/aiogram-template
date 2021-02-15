@@ -1,4 +1,4 @@
-from aiogram import Dispatcher, filters
+from aiogram import Dispatcher
 from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from aiogram.utils.markdown import hbold
 
@@ -23,4 +23,4 @@ async def start(m: Message):
 
 
 def setup(dp: Dispatcher):
-    dp.register_message_handler(start, filters.Command(commands="start"))
+    dp.register_message_handler(start, commands="start")

@@ -18,9 +18,6 @@ bot = Bot(**config.bot)
 storage = MemoryStorage()
 dp = Dispatcher(bot, storage=storage)
 
-# Module instance for current dispatcher
-modules = ModuleManager(dp, config.modules)
-
 # Ignore certain loggers
 for i in config.log_ignore:
     logger = logging.getLogger(i)

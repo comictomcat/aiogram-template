@@ -20,26 +20,26 @@ help:
 # ========
 
 config:
-	python -m poetry run python app/misc/confgen.py
+	poetry run python app/misc/confgen.py
 
 install:
-	python -m poetry install
+	poetry install
 
 run:
-	python -m poetry run python -m app
+	poetry run python -m app
 
 update:
-	python -m poetry update
+	poetry update
 
 
 black:
-	python -m poetry run python -m black .
+	poetry run python -m black .
 
 isort:
-	python -m poetry run python -m isort .
+	poetry run python -m isort .
 
 flake:
-	python -m poetry run python -m flake8 .
+	poetry run python -m flake8 .
 
 lint:
 	$(MAKE) black

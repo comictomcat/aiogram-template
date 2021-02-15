@@ -46,10 +46,10 @@ app:
     - {user}
 
   modules:
+    - middlewares
+    - filters
     - handlers.start
     - handlers.errors
-    - middlewares.throttling
-    - filters.is_reply
 
   log_ignore:
     - aiogram

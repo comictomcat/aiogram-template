@@ -1,16 +1,19 @@
 import logging
 
-from aiogram import Dispatcher, executor
+from aiogram import Bot, Dispatcher, executor
+from aiogram.contrib.fsm_storage.memory import MemoryStorage
 
-from app.bot import config, dp, modules
+from app.bot import config, dp
+from app.misc import ModuleManager
 
 
 async def startup(dispatcher: Dispatcher):
     """Triggers on startup."""
 
     # Load modules
+    modules = ModuleManager(dispatcher, config.modules)
     modules.load()
-    logging.debug("Modules: " + ", ".join(modules.loaded))
+
     logging.info("Start polling.")
 
 

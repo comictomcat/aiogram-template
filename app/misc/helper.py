@@ -22,8 +22,6 @@ def get_args(text: str, maximum: int = 2):
 async def set_commands(dp: Dispatcher, commands: dict):
     """
     Set bot's commands
-    :param dp: Dispatcher
-    :param commands: dict
     """
 
     await dp.bot.set_my_commands(
@@ -33,10 +31,7 @@ async def set_commands(dp: Dispatcher, commands: dict):
 
 async def mailing(dp, users: list, message: str):
     """
-    Send message for every user in the passed list
-    :param dp: Dispatcher
-    :param users: list
-    :param message: str
+    Send message to every user in the passed list
     """
 
     for superuser in users:

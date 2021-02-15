@@ -14,12 +14,6 @@ class Config:
     """
 
     def __init__(self, path: str or Path):
-        """
-        A Config constructor
-        :param path: path to config file
-        :type path: Union[Path, str]
-        """
-
         with open(path) as file:
             self.config = load(stream=file, Loader=Loader)
 
