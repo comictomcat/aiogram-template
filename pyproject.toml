@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "Template"
-version = "0.5.4"
+version = "0.5.5"
 description = "An aiogram template written in aiogram."
 authors = ["Daniil Fedotov <comictomcat@gmail.com>"]
 license = "MIT"

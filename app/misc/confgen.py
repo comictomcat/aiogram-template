@@ -47,7 +47,6 @@ app:
 
   modules:
     - middlewares
-    - filters
     - handlers.start
     - handlers.errors
 
