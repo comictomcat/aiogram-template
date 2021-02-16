@@ -17,7 +17,7 @@ Scalable and straightforward template for bots written on [aiogram](https://gith
 #### Poetry Deployment
 - **Note:** You need to have Poetry installed: `pip install poetry`;
 - Install dependencies: `make install`;
-- Generate a default config: `make config`;
+- Rename `config.yaml.example` to `config.yaml` and replace a token placeholder with your own one;
 - Start the bot: `make run`.
 
 #### Maintenance

@@ -1,0 +1,28 @@
+
+bot:
+    token: {BOT_TOKEN}
+    parse_mode: html
+
+# Whether to skip previous updates or not
+executor:
+    skip_updates: true
+
+# You can either use your own
+# telegram ID or keep it null
+superusers:
+    - null
+
+# Modules (handlers, middlewares and etc.) to load
+modules:
+    - middlewares
+    - handlers.start
+    - handlers.errors
+
+# Loggers to ignore.
+# A bunch of them are already ignored
+# to remove annoying stuff.
+log_ignore:
+    - aiogram
+    - asyncio
+    - aiogram.Middleware
+    - aiogram.dispatcher.dispatcher

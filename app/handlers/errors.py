@@ -13,7 +13,7 @@ async def errors_handler(update, exception):
     """
 
     await mailing(
-        dp, config.superusers, f"Error: \n{exception} \n\n" f"Update: {update}"
+        dp, config.get("superusers"), f"Error: \n{exception} \n\n" f"Update: {update}"
     )
 
     logging.exception(exception)

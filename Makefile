@@ -5,7 +5,6 @@ help:
 	@echo "  make <commands>"
 	@echo ""
 	@echo "AVAILABLE COMMANDS"
-	@echo "  config	Generate a default config"
 	@echo "  install	Install dependencies"
 	@echo "  run		Start a bot"
 	@echo "  update	Update dependencies"
@@ -19,9 +18,6 @@ help:
 # Commands
 # ========
 
-config:
-	poetry run python app/misc/confgen.py
-
 install:
 	poetry install
 
@@ -30,7 +26,6 @@ run:
 
 update:
 	poetry update
-
 
 black:
 	poetry run python -m black .

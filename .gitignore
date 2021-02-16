@@ -11,7 +11,7 @@ env.bak/
 venv.bak/
 
 # Secret file
-config.yml
+config.yaml
 config.yaml
 
 # Editor-specified files

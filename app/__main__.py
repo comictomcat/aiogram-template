@@ -11,7 +11,7 @@ async def startup(dispatcher: Dispatcher):
     """Triggers on startup."""
 
     # Load modules
-    modules = ModuleManager(dispatcher, config.modules)
+    modules = ModuleManager(dispatcher, config.get("modules"))
     modules.load()
 
     logging.info("Start polling.")
@@ -19,4 +19,4 @@ async def startup(dispatcher: Dispatcher):
 
 if __name__ == "__main__":
     # Start long-polling mode
-    executor.start_polling(dp, on_startup=startup, **config.executor)
+    executor.start_polling(dp, on_startup=startup, **config.get("executor"))
