@@ -10,7 +10,8 @@ ENV/
 env.bak/
 venv.bak/
 
-# A config file
+# Config files
+config.yml
 config.yaml
 
 # Editor-specified files
