@@ -19,9 +19,9 @@ storage = MemoryStorage()
 dp = Dispatcher(bot, storage=storage)
 
 # Ignore certain loggers
-for i in config.get("log_ignore"):
-    logger = logging.getLogger(i)
-    logger.disabled = True
+for logger in config.get("log_ignore"):
+    current_logger = logging.getLogger(logger)
+    current_logger.disabled = True
 
 # Configure logging
 logging.basicConfig(

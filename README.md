@@ -1,7 +1,7 @@
 ### [![Python](https://img.shields.io/badge/Python-3.7%2B-blue)](https://www.python.org/downloads/)  [![Aiogram](https://img.shields.io/badge/aiogram-2.11.2-blue)](https://pypi.org/project/aiogram/) 
 
 ### About
-Scalable and straightforward template for bots written on [aiogram](https://github.com/aiogram/aiogram) with built-in handlers, utils, middleware, filter and a few extras. Inspired by a couple of other templates mentioned later.
+Scalable and straightforward template for bots written on [aiogram](https://github.com/aiogram/aiogram) with built-in module management system. Inspired by a couple of other templates mentioned later.
 
 ### Setting it up
 

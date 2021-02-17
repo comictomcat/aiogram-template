@@ -12,12 +12,11 @@ class ModuleManager:
     Module Manager.
     """
 
-    def __init__(self, dp: Dispatcher, modules):
+    def __init__(self, dp: Dispatcher):
         self.dp = dp
-        self.modules = modules
         self.root = Path(__file__).parent.parent
 
-    def _load_path(self, path: str):
+    def load_path(self, path: str):
 
         mod_paths = glob.glob(f"{self.root}/{path}/*.py")
 
@@ -30,9 +29,9 @@ class ModuleManager:
         ]
 
         for module in all_modules:
-            self._load(path.replace("/", ".") + f".{module}")
+            self.load(path.replace("/", ".") + f".{module}")
 
-    def _load(self, module: str):
+    def load(self, module: str):
 
         try:
             imp_module = import_module("app." + module)
@@ -55,15 +54,15 @@ class ModuleManager:
             raise SystemExit()
 
         logging.debug(f"Module <{module}> was loaded.")
-        return True
+        return module
 
-    def load(self):
+    def load_all(self, modules: list):
         """
         Iterates through modules and loads them
         """
 
-        for module in self.modules:
+        for module in modules:
             if isdir(f"{self.root}/{module}/"):
-                self._load_path(module)
+                self.load_path(module)
             else:
-                self._load(module)
+                self.load(module)

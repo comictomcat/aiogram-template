@@ -10,8 +10,7 @@ ENV/
 env.bak/
 venv.bak/
 
-# Secret file
-config.yaml
+# A config file
 config.yaml
 
 # Editor-specified files

@@ -1,22 +1,11 @@
 from aiogram import Dispatcher
 from aiogram.types import BotCommand
+from yaml import load
 
-
-def get_args(text: str, maximum: int = 2):
-    """
-    Get command arguments.
-    """
-
-    if maximum <= 0:
-        maximum = -1
-    elif maximum == 1:
-        args = text.split(maxsplit=maximum)[1:]
-        if args:
-            return args[0]
-        else:
-            return args
-
-    return text.split(maxsplit=maximum)[1:]
+try:
+    from yaml import CLoader as Loader
+except ImportError:
+    from yaml import Loader
 
 
 async def set_commands(dp: Dispatcher, commands: dict):
@@ -42,3 +31,12 @@ async def mailing(dp, users: list, message: str):
             await dp.bot.send_message(superuser, message)
         except Exception:
             continue
+
+
+def parse_config(path):
+    """
+    Parse a config.
+    """
+
+    with open(path) as file:
+        return load(file, Loader=Loader)

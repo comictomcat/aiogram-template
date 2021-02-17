@@ -1,4 +1,4 @@
-
+# Telegram Bot API Token
 bot:
     token: {BOT_TOKEN}
     parse_mode: html
@@ -7,22 +7,23 @@ bot:
 executor:
     skip_updates: true
 
-# You can either use your own
-# telegram ID or keep it null
+# You can either use your own ID or keep it null
 superusers:
     - null
 
-# Modules (handlers, middlewares and etc.) to load
+# Modules to load
 modules:
     - middlewares
     - handlers.start
     - handlers.errors
 
 # Loggers to ignore.
-# A bunch of them are already ignored
-# to remove annoying stuff.
 log_ignore:
     - aiogram
     - asyncio
     - aiogram.Middleware
     - aiogram.dispatcher.dispatcher
+
+# Visible commands
+commands:
+    start: Start conversation with me
