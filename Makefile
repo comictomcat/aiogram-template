@@ -36,7 +36,4 @@ isort:
 flake:
 	poetry run python -m flake8 .
 
-lint:
-	$(MAKE) black
-	$(MAKE) isort
-	$(MAKE) flake
+lint: black isort flake

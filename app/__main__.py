@@ -16,8 +16,6 @@ async def startup(dispatcher: Dispatcher):
 
     await set_commands(dispatcher, config.get("commands"))
 
-    logging.info("Start polling.")
-
 
 if __name__ == "__main__":
     # Start long-polling mode

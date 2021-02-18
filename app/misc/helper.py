@@ -10,7 +10,7 @@ except ImportError:
 
 async def set_commands(dp: Dispatcher, commands: dict):
     """
-    Set bot's commands
+    Set command hints
     """
 
     await dp.bot.set_my_commands(
