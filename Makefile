@@ -1,4 +1,5 @@
 default:help
+py := poetry run python
 
 help:
 	@echo "USAGE"
@@ -22,18 +23,18 @@ install:
 	poetry install
 
 run:
-	poetry run python -m app
+	$(py) -m app
 
 update:
 	poetry update
 
 black:
-	poetry run python -m black .
+	$(py) -m black .
 
 isort:
-	poetry run python -m isort .
+	$(py) -m isort .
 
 flake:
-	poetry run python -m flake8 .
+	$(py) -m flake8 .
 
 lint: black isort flake

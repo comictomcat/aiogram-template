@@ -12,12 +12,10 @@ async def errors_handler(update, exception):
     exceptions within task factory tasks.
     """
 
-    await mailing(
-        dp, config.get("superusers"), f"Error: \n{exception} \n\n" f"Update: {update}"
-    )
-
     logging.exception(exception)
     logging.debug(update)
+
+    return True
 
 
 def setup(dp: Dispatcher):
