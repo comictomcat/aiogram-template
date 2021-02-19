@@ -3,7 +3,6 @@ import logging
 from aiogram import Dispatcher
 
 from app.bot import config, dp
-from app.misc import mailing
 
 
 async def errors_handler(update, exception):
