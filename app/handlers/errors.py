@@ -2,8 +2,6 @@ import logging
 
 from aiogram import Dispatcher
 
-from app.bot import config, dp
-
 
 async def errors_handler(update, exception):
     """

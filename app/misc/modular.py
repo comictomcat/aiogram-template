@@ -2,7 +2,6 @@ import glob
 import logging
 from importlib import import_module
 from os.path import basename, isdir, isfile
-from pathlib import Path
 
 from aiogram import Dispatcher
 
@@ -12,14 +11,13 @@ class ModuleManager:
     Module Manager.
     """
 
-    def __init__(self, dp: Dispatcher):
+    def __init__(self, dp: Dispatcher, root: str):
         self.dp = dp
-        self.root = Path(__file__).parent.parent
+        self.root = root
 
     def load_path(self, path: str):
         """
-        Goes through all modules in path
-        and loads them.
+        Goes through all modules in path and loads them.
         """
 
         mod_paths = glob.glob(f"{self.root}/{path}/*.py")

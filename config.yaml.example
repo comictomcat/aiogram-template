@@ -7,14 +7,9 @@ bot:
 executor:
     skip_updates: true
 
-# You can either use your own ID or keep it null
-superusers:
-    - null
-
-# Modules to load
-# Importing certain modules: handlers.echo
-# Importing certain folder: handlers; handlers/private
-# Importing init: handlers.__init__ OR $handlers (shortcut)
+# Modules to load. Import certain modules: handlers.echo
+# Import certain folder: handlers; handlers/private
+# Import init: handlers.__init__ OR $handlers (shortcut)
 modules:
     - middlewares
     - handlers.start
