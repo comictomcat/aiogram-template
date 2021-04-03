@@ -13,6 +13,9 @@ venv.bak/
 # Config files
 config.yaml
 
+# Poetry lock file
+poetry.lock
+
 # Editor-specified files
 .vscode/
 .idea/

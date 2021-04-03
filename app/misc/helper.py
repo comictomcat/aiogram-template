@@ -1,4 +1,4 @@
-from aiogram import Bot
+from aiogram import Dispatcher
 from aiogram.types import BotCommand
 from yaml import load
 
@@ -8,12 +8,12 @@ except ImportError:
     from yaml import Loader
 
 
-async def set_commands(bot: Bot, commands: dict):
+async def set_commands(dp: Dispatcher, commands: dict):
     """
     Set command hints
     """
 
-    await bot.set_my_commands(
+    await dp.bot.set_my_commands(
         [BotCommand(command, description) for command, description in commands.items()]
     )
 

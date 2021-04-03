@@ -1,9 +1,6 @@
 from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 
-from app.middlewares.throttling import rate_limit
 
-
-@rate_limit(3, "start")
 async def start_command(m: Message):
     """Responds to /start."""
 
