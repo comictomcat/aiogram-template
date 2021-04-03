@@ -1,25 +1,11 @@
 # Telegram Bot API Token
 bot:
-    token: {BOT_TOKEN}
+    token: BOT_TOKEN
     parse_mode: html
 
 # Whether to skip previous updates or not
 executor:
     skip_updates: true
-
-# Modules to load. Import certain modules: handlers.echo
-# Import certain folder: handlers; handlers/private
-# Import init: handlers.__init__ OR $handlers (shortcut)
-modules:
-    - middlewares
-    - handlers.start
-    - handlers.errors
-
-# Loggers to ignore.
-log_ignore:
-    - aiogram
-    - asyncio
-    - aiogram.Middleware
 
 # Visible commands
 commands:

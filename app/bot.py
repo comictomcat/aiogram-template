@@ -1,7 +1,7 @@
-import logging.config
 from pathlib import Path
 
-from rich.logging import RichHandler
+from aiogram import Bot, Dispatcher
+from aiogram.contrib.fsm_storage.memory import MemoryStorage
 
 from app.misc import parse_config
 
@@ -11,12 +11,7 @@ ROOT_DIRECTORY = Path(__file__).parent.parent
 # Config
 config = parse_config(ROOT_DIRECTORY / "config.yaml")
 
-# Ignore certain loggers
-for logger in config.get("log_ignore"):
-    current_logger = logging.getLogger(logger)
-    current_logger.disabled = True
-
-# Configure logging
-logging.basicConfig(
-    level="NOTSET", format="%(message)s", datefmt="%X |", handlers=[RichHandler()]
-)
+# Bot, storage and dispatcher instances
+bot = Bot(**config.get("bot"))
+storage = MemoryStorage()
+dp = Dispatcher(bot, storage=storage)

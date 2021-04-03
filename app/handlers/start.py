@@ -1,12 +1,10 @@
-from aiogram import Dispatcher
 from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
-from aiogram.utils.markdown import hbold
 
 from app.middlewares.throttling import rate_limit
 
 
 @rate_limit(3, "start")
-async def start(m: Message):
+async def start_command(m: Message):
     """Responds to /start."""
 
     # Create an inline keyboard
@@ -18,9 +16,5 @@ async def start(m: Message):
     )
 
     await m.answer(
-        f"Hello there, {hbold(m.from_user.first_name)}!", reply_markup=welcome_markup
+        f"Hello there, <b>{m.from_user.first_name}</b>!", reply_markup=welcome_markup
     )
-
-
-def setup(dp: Dispatcher):
-    dp.register_message_handler(start, commands="start")

@@ -6,9 +6,7 @@ help:
 	@echo "  make <commands>"
 	@echo ""
 	@echo "AVAILABLE COMMANDS"
-	@echo "  install	Install dependencies"
 	@echo "  run		Start a bot"
-	@echo "  update	Update dependencies"
 	@echo "  flake		Run flake8"
 	@echo "  black		Run black"
 	@echo "  isort		Run isort"
@@ -19,14 +17,8 @@ help:
 # Commands
 # ========
 
-install:
-	poetry install
-
 run:
 	$(py) -m app
-
-update:
-	poetry update
 
 black:
 	$(py) -m black .
