@@ -1,5 +1,5 @@
-from loguru import logger
 from aiogram import Dispatcher, executor
+from loguru import logger
 
 from app import handlers
 from app.bot import config, dp

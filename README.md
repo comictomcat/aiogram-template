@@ -8,9 +8,7 @@ Scalable and straightforward template for bots written in [aiogram](https://gith
 
 #### System dependencies
 
-- Python 3.7+
-- GNU/Make
-- GIT
+- Python 3.7+, GNU/Make, Git
 
 #### Preparations
 
@@ -28,7 +26,8 @@ Scalable and straightforward template for bots written in [aiogram](https://gith
 
 *Use `make help` to view available commands*
 
-- Reformat code `make lint`.
+- Update dependencies `poetry update`;
+- Reformat the code `make lint`.
 
 ### Other templates
 
